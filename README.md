@@ -1,6 +1,6 @@
 # kata-consecutive-strings
 
-** My Solutions For This Kata ** 
+**My Solutions For This Kata** 
 
 
 You are given an array strarr of strings and an integer k. Your task is to return the first longest string consisting of k consecutive strings taken in the array.
