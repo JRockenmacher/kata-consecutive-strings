@@ -35,6 +35,7 @@ const removeDuplicates = (strArr) => {
 // let k = integer signifying # of strings to return after ordering longest to shortest
 // let n = strArr.length() 
 // if (n === 0 || k > n || k <= 0) => ''
+
 let strArr
 let numForConsec
 let numOfStr = strArr.length
@@ -44,8 +45,13 @@ const checkFunction = (numOfStr, numForConsec) => {
         if(!numOfStr ||numOfStr < numForConsec || numForConsec <= 0){
             return ''
         }
-
-    }
-    
+    } 
 }
-  
+
+// let's reoder the strings first so I can use indexes to navigate
+
+const longestToShortest = (strArr) => {
+    for(let i = 0; i < numOfStr; i++) {
+        
+    }
+}
