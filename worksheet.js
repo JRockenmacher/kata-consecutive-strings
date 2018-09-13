@@ -40,6 +40,8 @@ let strArr
 let numForConsec
 let numOfStr = strArr.length
 
+//first let's make a check function that returns an empty string if data in insufficient for the parameters.
+
 const checkFunction = (numOfStr, numForConsec) => {
     for(let i = 0; i < numOfStr; i++){
         if(!numOfStr ||numOfStr < numForConsec || numForConsec <= 0){
@@ -50,8 +52,23 @@ const checkFunction = (numOfStr, numForConsec) => {
 
 // let's reoder the strings first so I can use indexes to navigate
 
-const longestToShortest = (strArr) => {
-    for(let i = 0; i < numOfStr; i++) {
-        
+const sortByLongest = (strArr) => {
+    strArr.sort( (a,b) => a.length - b.length || a.localeCompare(b))
+}
+
+const strBuilder = (strArr, numberForConsec) => {
+    const indexesToConcat = numForConsec - 1 
+    let concattedStr = ''
+    for(i = 0; i < indexesToConcat; i++) {
+        concattedStr += strArr[i]
+        return concattedStr
+    }
+
+// now let's make a function that accepts the sort function above, and returns numberForConsec strings concatted 
+
+const longestConsec = (strArr, numForConsec) => {
+    checkFunction(numOfStr, numForConsec)
+    sortByLongest(strArr)
+    return strBuilder(strArr, numForConsec)
     }
 }
