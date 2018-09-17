@@ -42,7 +42,7 @@ let numOfStr = strArr.length
 
 //first let's make a check function that returns an empty string if data in insufficient for the parameters.
 
-const checkFunction = (numOfStr, numForConsec) => {
+const checkFunction = (numForConsec) => {
     for(let i = 0; i < numOfStr; i++){
         if(!numOfStr ||numOfStr < numForConsec || numForConsec <= 0){
             return ''
@@ -53,22 +53,24 @@ const checkFunction = (numOfStr, numForConsec) => {
 // let's reoder the strings first so I can use indexes to navigate
 
 const sortByLongest = (strArr) => {
-    strArr.sort( (a,b) => a.length - b.length || a.localeCompare(b))
+    strArr.sort( (a,b) => b.length - a.length || b.localeCompare(a))
 }
 
 const strBuilder = (strArr, numberForConsec) => {
-    const indexesToConcat = numForConsec - 1 
+    const indexesToConcat = numForConsec 
     let concattedStr = ''
     for(i = 0; i < indexesToConcat; i++) {
         concattedStr += strArr[i]
         return concattedStr
     }
+}
 
 // now let's make a function that accepts the sort function above, and returns numberForConsec strings concatted 
 
 const longestConsec = (strArr, numForConsec) => {
-    checkFunction(numOfStr, numForConsec)
+    checkFunction(numForConsec)
     sortByLongest(strArr)
     return strBuilder(strArr, numForConsec)
-    }
 }
+
+// in repl.it this is working but concatting undefined on the end of the string. Check function not working
