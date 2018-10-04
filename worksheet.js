@@ -57,9 +57,8 @@ const sortByLongest = (strArr) => {
 }
 
 const strBuilder = (strArr, numberForConsec) => {
-    const indexesToConcat = numForConsec 
     let concattedStr = ''
-    for(i = 0; i < indexesToConcat; i++) {
+    for(i = 0; i < numberForConsec; i++) {
         concattedStr += strArr[i]
         return concattedStr
     }
@@ -67,10 +66,18 @@ const strBuilder = (strArr, numberForConsec) => {
 
 // now let's make a function that accepts the sort function above, and returns numberForConsec strings concatted 
 
+// const longestConsec = (strArr, numForConsec) => {
+//     checkFunction(numForConsec) ? '' : () => {
+//     (sortByLongest(strArr))
+//     return strBuilder(strArr, numForConsec)}
+// }
+// the ternary doesn't seem to work so refactored to a basic "if" statement
 const longestConsec = (strArr, numForConsec) => {
-    checkFunction(numForConsec)
+  if (checkFunction(numForConsec)) {
     sortByLongest(strArr)
     return strBuilder(strArr, numForConsec)
+  } else {
+    return "nope"
+  }
 }
-
 // in repl.it this is working but concatting undefined on the end of the string. Check function not working
